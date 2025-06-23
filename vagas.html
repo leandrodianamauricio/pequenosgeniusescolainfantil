@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Vagas de Professor</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Inter', Arial, sans-serif;
+            background: #f7f7fa;
+            color: #222;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background: #fff;
+            border-bottom: 2px solid #eee;
+            padding: 24px 0 0 0;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0 0 10px 0;
+            color: #9140E5;
+            font-family: 'Syne', Arial, sans-serif;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 16px 0;
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+        }
+        nav a {
+            color: #ff7600;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1em;
+            transition: color 0.2s;
+        }
+        nav a.active, nav a:hover {
+            color: #617fe3;
+        }
+        main {
+            max-width: 700px;
+            margin: 32px auto;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px #0001;
+            padding: 32px 24px;
+        }
+        h2 {
+            color: #9140E5;
+            font-family: 'Syne', Arial, sans-serif;
+            margin-top: 0;
+        }
+        form label {
+            display: block;
+            margin-top: 12px;
+            font-weight: 600;
+        }
+        form input, form textarea {
+            width: 100%;
+            padding: 8px;
+            margin-top: 4px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 1em;
+            box-sizing: border-box;
+        }
+        form button {
+            margin-top: 16px;
+            padding: 10px 24px;
+            background: #9140E5;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            font-size: 1.1em;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background 0.2s;
+        }
+        form button:hover {
+            background: #617fe3;
+        }
+        .lista-vagas ul {
+            padding: 0;
+            list-style: none;
+        }
+        .lista-vagas li {
+            background: #f7f7fa;
+            border: 1px solid #eee;
+            border-radius: 8px;
+            margin-bottom: 16px;
+            padding: 16px;
+        }
+        .lista-vagas strong {
+            color: #9140E5;
+        }
+        footer {
+            background: #fff;
+            border-top: 2px solid #eee;
+            text-align: center;
+            padding: 24px 0;
+            margin-top: 40px;
+            color: #888;
+        }
+        @media (max-width: 600px) {
+            main {
+                padding: 16px 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Pequenos Genius - Cadastro de Vagas</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="vagas.html" class="active">Vagas</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="cadastro-vaga">
+            <h2>Cadastrar Nova Vaga de Professor</h2>
+            <form id="form-vaga" autocomplete="off">
+                <label for="titulo">Título da Vaga:</label>
+                <input type="text" id="titulo" name="titulo" required>
+
+                <label for="descricao">Descrição:</label>
+                <textarea id="descricao" name="descricao" rows="4" required></textarea>
+
+                <label for="materia">Matéria:</label>
+                <input type="text" id="materia" name="materia" required>
+
+                <label for="requisitos">Requisitos:</label>
+                <textarea id="requisitos" name="requisitos" rows="3"></textarea>
+
+                <label for="email">E-mail para contato:</label>
+                <input type="email" id="email" name="email" required>
+
+                <button type="submit">Cadastrar Vaga</button>
+            </form>
+        </section>
+        <section class="lista-vagas">
+            <h2>Vagas Cadastradas</h2>
+            <ul id="vagas-lista">
+                <!-- Vagas cadastradas aparecerão aqui -->
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Pequenos Genius. Todos os direitos reservados.</p>
+    </footer>
+    <script>
+        // Exemplo simples para adicionar vagas à lista (sem backend)
+        const form = document.getElementById('form-vaga');
+        const lista = document.getElementById('vagas-lista');
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const titulo = document.getElementById('titulo').value.trim();
+            const materia = document.getElementById('materia').value.trim();
+            const descricao = document.getElementById('descricao').value.trim();
+            const requisitos = document.getElementById('requisitos').value.trim();
+            const email = document.getElementById('email').value.trim();
+
+            if (!titulo || !materia || !descricao || !email) {
+                alert('Por favor, preencha todos os campos obrigatórios.');
+                return;
+            }
+
+            const li = document.createElement('li');
+            li.innerHTML = `<strong>${titulo}</strong> - ${materia}<br>
+                <em>${descricao}</em><br>
+                <small>Requisitos: ${requisitos ? requisitos : 'Não informado'}</small><br>
+                <a href="mailto:${email}">${email}</a>`;
+            lista.appendChild(li);
+
+            form.reset();
+        });
+    </script>
+</body>
+</html>
