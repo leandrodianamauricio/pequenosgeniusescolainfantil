@@ -2671,9 +2671,9 @@ input, select, textarea {
 /* Banner */
 
 	#banner {
-		background-image: url("../../images/banner_LapisDeCor.jpg");
+		background-image: url("../../images/banner_Principal.png");
 		background-position: center center;
-		background-size: cover;
+		background-size: 20%;
 		height: 28em;
 		text-align: center;
 		position: relative;
