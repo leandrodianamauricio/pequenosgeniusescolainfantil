@@ -1,8 +1,5 @@
 Escola Infantil Pequenos Genius
-html5up.net | @ajlkn
-Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
-
-
+ 
 A business/corporate style responsive site template. It's pretty barebones but should
 go over pretty well for folks wanting to get their serious business on.
 
