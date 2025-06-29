@@ -2670,17 +2670,19 @@ input, select, textarea {
 
 /* Banner */
 
+
 	#banner {
 		background-image: url("../../images/banner_Principal.png");
 		background-position: center center;
-		background-size: 20%;
-		height: 28em;
+		background-size: 100% 100%; 
+		height: 38em;
 		text-align: center;
 		position: relative;
+
 	}
 
 		#banner header {
-			position: absolute;
+			position: 0;
 			bottom: 0;
 			left: 0;
 			width: 100%;
