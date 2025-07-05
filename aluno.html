@@ -68,15 +68,15 @@
                     <h2>Área do Aluno</h2>
                     <p>Acesse com seu login e senha para visualizar informações do Aluno.</p>
                 </header>
-                <form method="post" action="../agendas/A000001.html" style="max-width: 400px; margin: 2em auto 0 auto; background: #fff3e0; padding: 2em; border-radius: 12px; box-shadow: 0 2px 8px #e4b48848;">
+                <form id="loginForm" autocomplete="off" style="max-width: 400px; margin: 2em auto 0 auto; background: #fff3e0; padding: 2em; border-radius: 12px; box-shadow: 0 2px 8px #e4b48848;">
                     <div class="row gtr-50">
                         <div class="col-12">
                             <label for="login">Login</label>
-                            <input type="text" name="login" id="login" placeholder="Digite seu login" required />
+                            <input type="text" name="login" id="var-login" placeholder="Digite seu login" required />
                         </div>
                         <div class="col-12">
                             <label for="senha">Senha</label>
-                            <input type="password" name="senha" id="senha" placeholder="Digite sua senha" required />
+                            <input type="password" name="senha" id="var-senha" placeholder="Digite sua senha" required />
                         </div>
                         <div class="col-12">
                             <ul class="actions" style="text-align: center;">
@@ -85,16 +85,17 @@
                         </div>
                     </div>
                     <p style="text-align: center; margin-top: 1em;">
-                        <a href="#" style="color: #2d2d2d;">Esqueceu sua senha?</a>
+                        <a href="https://wa.me/5511989092211?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20a%20Escola%20Pequenos%20Genius." style="color: #2d2d2d;">Esqueceu sua senha?</a>
                     </p>
+                    <p id="login-erro" style="color: red; text-align: center; display: none;">Login ou senha inválidos.</p>
                 </form>
             </article>
         </div>
     </div>
 </section>
 
-			<!-- Footer simplificado -->
-				<div id="footer">
+<!-- Footer simplificado -->
+<div id="footer">
     <div class="container">
         <ul class="icons">
 				<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
@@ -110,7 +111,7 @@
     </div>
 </div>
 
-		</div>
+</div>
 
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
@@ -119,6 +120,7 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script src="usuarios.html"></script>
 
     <a href="https://wa.me/5511989092211?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20a%20Escola%20Pequenos%20Genius." class="whatsapp-fixo" target="_blank" title="Fale conosco no WhatsApp">
         <i class="fab fa-whatsapp"></i>
@@ -148,6 +150,26 @@
             color: #fff;
         }
     </style>
+
+	<script>
+// Alunos de usuários e senhas (NÃO seguro para produção)
+const usuarios = [
+  { login: 'aluno1', senha: '1234', pagina: 'agendas/A000001.html' },
+  { login: 'aluno2', senha: 'abcd', pagina: 'agendas/A000002.html' }
+];
+
+document.getElementById('loginForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const login = document.getElementById('var-login').value;
+  const senha = document.getElementById('var-senha').value;
+  const usuario = usuarios.find(u => u.login === login && u.senha === senha);
+  if (usuario) {
+    window.location.href = usuario.pagina;
+  } else {
+    document.getElementById('login-erro').style.display = 'block';
+  }
+});
+</script>
 
 	</body>
 </html>
