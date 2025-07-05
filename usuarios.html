@@ -1,8 +1,39 @@
 <script>
-// Alunos de usuários e senhas (NÃO seguro para produção)
-let usuarios = [
-  { login: 'aluno1', senha: '1234', pagina: 'agendas/A000001.html' },
-  { login: 'aluno2', senha: 'abcd', pagina: 'agendas/A000002.html' }
-];
+fetch('https://pequenosgeniusescolainfantil-leandro-diana-mauricios-projects.vercel.app/api/usuarios')
+  .then(res => res.json())
+  .then(data => {
+    console.log(data); // Aqui você pode usar os dados para validar login, exibir lista, etc.
+  });
+
+// Função para cadastrar novo usuário via API
+function cadastrarUsuario(login, senha, pagina) {
+  fetch('https://pequenosgeniusescolainfantil-leandro-diana-mauricios-projects.vercel.app/api/usuarios', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ login, senha, pagina })
+  })
+  .then(res => res.json())
+  .then(data => {
+    alert(data.message || 'Usuário cadastrado!');
+  })
+  .catch(() => alert('Erro ao cadastrar usuário!'));
+}
+
+// Exemplo de uso com formulário existente
+const form = document.getElementById('cadastroForm');
+if (form) {
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    const login = document.getElementById('novo-login').value.trim();
+    const senha = document.getElementById('nova-senha').value.trim();
+    const pagina = document.getElementById('nova-pagina').value.trim();
+    if (login && senha && pagina) {
+      cadastrarUsuario(login, senha, pagina);
+      document.getElementById('cadastro-msg').style.display = 'block';
+      this.reset();
+      setTimeout(() => { document.getElementById('cadastro-msg').style.display = 'none'; }, 2000);
+    }
+  });
+}
 </script>
 
