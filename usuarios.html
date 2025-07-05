@@ -1,39 +1,41 @@
-<script>
-fetch('https://pequenosgeniusescolainfantil-leandro-diana-mauricios-projects.vercel.app/api/usuarios')
-  .then(res => res.json())
-  .then(data => {
-    console.log(data); // Aqui você pode usar os dados para validar login, exibir lista, etc.
-  });
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Cadastro de Usuário</title>
+</head>
+<body>
+  <h2>Cadastrar novo usuário</h2>
+  <form id="cadastroForm" autocomplete="off">
+    <label for="novo-login">Login:</label>
+    <input type="text" id="novo-login" required><br>
+    <label for="nova-senha">Senha:</label>
+    <input type="text" id="nova-senha" required><br>
+    <label for="nova-pagina">Página (ex: agendas/A000003.html):</label>
+    <input type="text" id="nova-pagina" required><br>
+    <button type="submit">Cadastrar</button>
+  </form>
+  <div id="cadastro-msg" style="color:green;display:none;">Usuário cadastrado!</div>
 
-// Função para cadastrar novo usuário via API
-function cadastrarUsuario(login, senha, pagina) {
-  fetch('https://pequenosgeniusescolainfantil-leandro-diana-mauricios-projects.vercel.app/api/usuarios', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ login, senha, pagina })
-  })
-  .then(res => res.json())
-  .then(data => {
-    alert(data.message || 'Usuário cadastrado!');
-  })
-  .catch(() => alert('Erro ao cadastrar usuário!'));
-}
-
-// Exemplo de uso com formulário existente
-const form = document.getElementById('cadastroForm');
-if (form) {
-  form.addEventListener('submit', function(e) {
-    e.preventDefault();
-    const login = document.getElementById('novo-login').value.trim();
-    const senha = document.getElementById('nova-senha').value.trim();
-    const pagina = document.getElementById('nova-pagina').value.trim();
-    if (login && senha && pagina) {
-      cadastrarUsuario(login, senha, pagina);
-      document.getElementById('cadastro-msg').style.display = 'block';
-      this.reset();
-      setTimeout(() => { document.getElementById('cadastro-msg').style.display = 'none'; }, 2000);
-    }
-  });
-}
-</script>
-
+  <script>
+    document.getElementById('cadastroForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const login = document.getElementById('novo-login').value.trim();
+      const senha = document.getElementById('nova-senha').value.trim();
+      const pagina = document.getElementById('nova-pagina').value.trim();
+      fetch('https://pequenosgeniusescolainfantil-leandro-diana-mauricios-projects.vercel.app/api/usuarios', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ login, senha, pagina })
+      })
+      .then(res => res.json())
+      .then(data => {
+        document.getElementById('cadastro-msg').style.display = 'block';
+        document.getElementById('cadastroForm').reset();
+        setTimeout(() => { document.getElementById('cadastro-msg').style.display = 'none'; }, 2000);
+      })
+      .catch(() => alert('Erro ao cadastrar usuário!'));
+    });
+  </script>
+</body>
+</html>

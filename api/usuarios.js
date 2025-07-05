@@ -1,18 +1,24 @@
-// api/usuarios.js
-export default function handler(req, res) {
-  // Exemplo de lista de usuários (em produção, use banco de dados)
-  const usuarios = [
-    { login: 'aluno1', senha: '1234', pagina: 'agendas/A000001.html' },
-    { login: 'aluno2', senha: 'abcd', pagina: 'agendas/A000002.html' }
-  ];
+import { MongoClient } from 'mongodb';
+
+const uri = process.env.MONGODB_URI; // Defina essa variável no painel do Vercel
+const client = new MongoClient(uri);
+
+export default async function handler(req, res) {
+  await client.connect();
+  const db = client.db('pequenosgenius'); // nome do banco (pode ser qualquer nome)
+  const collection = db.collection('usuarios');
 
   if (req.method === 'GET') {
+    const usuarios = await collection.find().toArray();
     res.status(200).json(usuarios);
   } else if (req.method === 'POST') {
-    // Para cadastrar novo usuário (exemplo simples)
     const { login, senha, pagina } = req.body;
-    // Aqui você deveria salvar em banco de dados ou arquivo
-    res.status(201).json({ message: 'Usuário cadastrado (apenas exemplo, não persiste)' });
+    if (!login || !senha || !pagina) {
+      res.status(400).json({ message: 'Dados incompletos' });
+      return;
+    }
+    await collection.insertOne({ login, senha, pagina });
+    res.status(201).json({ message: 'Usuário cadastrado!' });
   } else {
     res.status(405).end();
   }
