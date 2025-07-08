@@ -102,7 +102,7 @@ input, select, textarea {
 	body, input, select, textarea {
 		color: #474747;
 		font-family: 'Source Sans Pro', sans-serif;
-		font-size: 16pt;
+		font-size: 20pt;
 		font-weight: 300;
 		line-height: 1.65em;
 	}
@@ -3162,7 +3162,7 @@ input, select, textarea {
 
 				#navPanel .link {
 					border-bottom: 0;
-					border-top: solid 1px rgb(0, 0, 0);
+					border-top: solid 1px rgb(206, 148, 90);
 					color: #000000;
 					display: block;
 					height: 48px;

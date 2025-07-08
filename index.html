@@ -55,12 +55,88 @@
         <div id="header">
             <h1 id="logo">
                 <a href="index.html">
-                    <span style="color: orange;">
+<!--                     <span style="color: orange;">
                         Escola Infantil
                         <img src="images/logo_Garrafas.png" alt="Logotipo da Escola Infantil Pequenos Genius"
                             style="vertical-align: middle; max-height: 40px; margin-right: 1px;" />
                         <em>Pequenos Genius</em>
-                    </span>
+                    </span> -->
+<span class="colorido" id="logoTexto"></span>
+
+<style>
+  .colorido span:nth-child(3n+1) {
+    color: green;
+  }
+
+  .colorido span:nth-child(3n+2) {
+    color: hotpink;
+  }
+
+  .colorido span:nth-child(3n+3) {
+    color: gold;
+  }
+
+  .colorido {
+    font-size: 3rem;
+    font-family: sans-serif;
+    font-weight: bold;
+    display: inline-flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1px;
+  }
+
+  .colorido img {
+    vertical-align: middle;
+    max-height: 70px;
+    margin: 0 6px;
+    transition: all 0.3s ease;
+  }
+
+  /* 📱 Ajustes para telas menores (mobile) */
+  @media (max-width: 768px) {
+    .colorido {
+      font-size: 1rem;
+    }
+
+    .colorido img {
+      max-height: 40px;
+      margin: 0 4px;
+    }
+  }
+</style>
+
+<script>
+  const textoAntes = "Escola Infantil ";
+  const textoDepois = "Pequenos Genius";
+  const container = document.getElementById("logoTexto");
+
+  // Função para criar spans com letras (incluindo espaços)
+  function adicionarTextoColorido(texto) {
+    texto.split("").forEach(letra => {
+      const span = document.createElement("span");
+      span.textContent = letra === " " ? "\u00A0" : letra; // espaço não-quebrável
+      container.appendChild(span);
+    });
+  }
+
+  // Adiciona "Escola Infantil "
+  adicionarTextoColorido(textoAntes);
+
+  // Adiciona a imagem no meio
+  const img = document.createElement("img");
+  img.src = "images/logo_Garrafas.png";
+  img.alt = "Logotipo da Escola Infantil Pequenos Genius";
+  container.appendChild(img);
+
+  // Adiciona "Pequenos Genius"
+  adicionarTextoColorido(textoDepois);
+</script>
+
+
+
+
+
                 </a>
             </h1>
             <nav id="nav">
