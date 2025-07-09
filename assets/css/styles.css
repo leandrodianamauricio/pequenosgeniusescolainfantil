@@ -1,0 +1,72 @@
+/* fomatação dos cards - projeto pedagógico - inicio */
+* {
+  margin:  0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'comic sans ms', sans-serif;
+/* muda cor da borda do site   */
+  background: #ffffff;
+  padding: 40px 10px;
+}
+
+.container {
+  text-align: center;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 2rem;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.card {
+/* muda cor dos cards     */
+  background-color: #d2c56448;
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  padding: 20px;
+  width: 300px;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card img {
+  width: 100%;
+  max-height: 250px;
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+.card-title {
+  font-size: 1.2rem;
+  color: #1a1a1a;
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+.card-text {
+  margin-top: 10px;
+  color: #555;
+  font-size: 0.95rem;
+  text-align: justify;
+}
+/* fomatação dos cards - projeto pedagógico - fim */
