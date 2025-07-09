@@ -100,7 +100,7 @@ html {
 	muda cor rodapé
 */
 body {
-	background: #f7f7f7 url("images/bg01.png");
+	background:  #b6d6fd6d url("images/bg01.png");
 }
 
 body.is-preload *,
@@ -157,20 +157,12 @@ i {
 	font-style: italic;
 }
 
-p,
-ul,
-ol,
-dl,
-table,
+p,ul,ol,dl,table,
 blockquote {
 	margin: 0 0 2em 0;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
+h1,h2,h3,h4,h5,
 h6 {
 	color: inherit;
 	font-weight: 600;
@@ -178,21 +170,13 @@ h6 {
 	margin-bottom: 1em;
 }
 
-h1 a,
-h2 a,
-h3 a,
-h4 a,
-h5 a,
+h1 a,h2 a,h3 a,h4 a,h5 a,
 h6 a {
 	color: inherit;
 	text-decoration: none;
 }
 
-h1 em,
-h2 em,
-h3 em,
-h4 em,
-h5 em,
+h1 em,h2 em,h3 em,h4 em,h5 em,
 h6 em {
 	font-style: normal;
 	font-weight: 300;
@@ -2800,10 +2784,11 @@ button.small,
 }
 /* botão fale conosco */
 .wrapper.style3 .button {
-	background: #fff;
+	background: #bed5f4;
 	color: #474747;
 }
 
+/* ilumina botão fale conosco */ 
 .wrapper.style3 .button:hover {
 	color: #37c0fb !important;
 }

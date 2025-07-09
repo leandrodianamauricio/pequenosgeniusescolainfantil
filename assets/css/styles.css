@@ -8,7 +8,7 @@
 body {
   font-family: 'comic sans ms', sans-serif;
 /* muda cor da borda do site   */
-  background: #ffffff;
+  /* background: #b6d6fd6d; */
   padding: 40px 10px;
 }
 
@@ -37,7 +37,7 @@ body {
 
 .card {
 /* muda cor dos cards     */
-  background-color: #d2c56448;
+  background-color: #50beed21;
   border-radius: 20px;
   box-shadow: 0 4px 15px rgba(0,0,0,0.1);
   padding: 20px;
