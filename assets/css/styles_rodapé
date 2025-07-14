@@ -1,0 +1,41 @@
+
+/* mobile */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-container div {
+    max-width: 100%;
+  }
+
+  .icons {
+    justify-content: center;
+  }
+
+  .whatsapp-fixo {
+    bottom: 16px;
+    right: 16px;
+  }
+}
+
+/* desktop  */
+html, body {
+  height: 1100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+footer {
+  margin-top: auto;
+}
