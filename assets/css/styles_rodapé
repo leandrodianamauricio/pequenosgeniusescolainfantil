@@ -1,26 +1,21 @@
 
 /* mobile */
-@media (max-width: 768px) {
+@media (max-width: 600px) {
   .footer-container {
     flex-direction: column;
-    gap: 20px;
-    align-items: center;
+    gap: 2em;
     text-align: center;
   }
 
-  .footer-container div {
+  .footer-container > div {
     max-width: 100%;
   }
-
-  .icons {
-    justify-content: center;
-  }
-
-  .whatsapp-fixo {
-    bottom: 16px;
-    right: 16px;
-  }
 }
+
+
+
+
+
 
 /* desktop  */
 html, body {
