@@ -6,6 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="assets/css/styles_rodapé" />    
     <link rel="stylesheet" href="assets/css/styles_vagas.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <style>
@@ -67,6 +68,7 @@
                         .colorido span:nth-child(3n+2) {
                             color: #0BBBE7;
                         }
+
                         .colorido span:nth-child(3n+3) {
                             color: #FED702;
                         }
@@ -158,126 +160,156 @@
             </nav>
         </div>
 
-        <!-- Banner -->
-        <section id="banner"> </section>
-
-  <div class="container">
-    <header>
-      <h1>Trabalhe Conosco</h1>
-    </header>
-      <p>Faça parte da equipe <strong>Pequenos Genius</strong>! Confira as vagas disponíveis!!!</p>
 
 
-    <section class="vagas">
-      <h2>Vagas Disponíveis</h2>
-
-      <div class="vaga">
-        <h3>Professora de Educação Infantil</h3>
-        <p><strong>Requisitos:</strong> Formação em Pedagogia, experiência com crianças de 0 a 5 anos, criatividade e responsabilidade.</p>
-        <p><strong>Descrição:</strong> Planejar e executar atividades pedagógicas, acompanhar o desenvolvimento das crianças e atuar em parceria com a equipe escolar.</p>
-      </div>
-
-      <div class="vaga">
-        <h3>Auxiliar de Sala</h3>
-        <p><strong>Requisitos:</strong> Ensino médio completo, gostar de crianças, proatividade e disposição para aprender.</p>
-        <p><strong>Descrição:</strong> Auxiliar a professora nas atividades diárias, cuidados e organização do ambiente escolar.</p>
-      </div>
-
-      <div class="vaga">
-        <h3>Estagiário(a)</h3>
-        <p><strong>Requisitos:</strong> Cursando Pedagogia, interesse em atuar na área da educação infantil.</p>
-        <p><strong>Descrição:</strong> Apoiar as atividades pedagógicas e de rotina, sob supervisão da equipe.</p>
-      </div>
-
-      <div class="vaga">
-        <h3>Serviços Gerais</h3>
-        <p><strong>Requisitos:</strong> Ensino fundamental, organização e responsabilidade.</p>
-        <p><strong>Descrição:</strong> Limpeza e conservação dos ambientes escolares.</p>
-      </div>
-    </section>
-
-    <section class="formulario">
-      <h2 id="form-entreEmContato">Entre em contato</h2>
-      <form id="form-contato" method="POST" action="https://formspree.io/f/xyzjrpok">
-        <input type="text" name="nome" placeholder="Nome completo" required>
-        <input type="email" name="email" placeholder="E-mail" required>
-        <input type="tel" name="whatsapp" id="whatsapp" placeholder="(99) 99999-9999" required>
-        <script src="https://unpkg.com/vanilla-masker/build/vanilla-masker.min.js"></script>
-        <script>
-             VMasker(document.querySelector("#whatsapp")).maskPattern("(99) 99999-9999");
-  document.getElementById("form-contato").addEventListener("submit", async function(event) {
-    event.preventDefault(); // Impede envio automático
-
-    const form = event.target;
-
-    const formData = new FormData(form);
-
-    try {
-      await fetch(form.action, {
-        method: form.method,
-        body: formData,
-        headers: {
-          'Accept': 'application/json'
-        }
-      });
-
-      if (confirm("Recebemos a sua mensagem! Nossa equipe irá analisá-la com carinho. Muito obrigado por seu interesse em fazer parte da Pequenos Genius.")) {
-        window.location.href = "../index.html"; // redireciona para página inicial
-      }
-
-    } catch (error) {
-      alert("Ocorreu um erro. Por favor, tente novamente.");
-      console.error(error);
-    }
-  });             
-        </script>
-        <select name="vaga" required>
-          <option value="">Selecione a vaga de interesse</option>
-          <option>Professora de Educação Infantil</option>
-          <option>Auxiliar de Sala</option>
-          <option>Estagiário(a)</option>
-          <option>Serviços Gerais</option>
-        </select>
-        <textarea name="mensagem" rows="4" placeholder="Fale sobre sua experiência e motivação"></textarea>
-        <button type="submit">Enviar</button>
-      </form>
-    </section>
-  </div>
+        <div class="container">
+            <header>
+                <h1>Trabalhe Conosco</h1>
+            </header>
+            <p>Faça parte da equipe <strong>Pequenos Genius</strong>! Confira as vagas disponíveis!!!</p>
 
 
+            <section class="vagas">
+                <h2>Vagas Disponíveis</h2>
 
+                <div class="vaga">
+                    <h3>Professora de Educação Infantil</h3>
+                    <p><strong>Requisitos:</strong> Formação em Pedagogia, experiência com crianças de 0 a 5 anos,
+                        criatividade e responsabilidade.</p>
+                    <p><strong>Descrição:</strong> Planejar e executar atividades pedagógicas, acompanhar o
+                        desenvolvimento das crianças e atuar em parceria com a equipe escolar.</p>
+                </div>
 
+                <div class="vaga">
+                    <h3>Auxiliar de Sala</h3>
+                    <p><strong>Requisitos:</strong> Ensino médio completo, gostar de crianças, proatividade e disposição
+                        para aprender.</p>
+                    <p><strong>Descrição:</strong> Auxiliar a professora nas atividades diárias, cuidados e organização
+                        do ambiente escolar.</p>
+                </div>
 
+                <div class="vaga">
+                    <h3>Estagiário(a)</h3>
+                    <p><strong>Requisitos:</strong> Cursando Pedagogia, interesse em atuar na área da educação infantil.
+                    </p>
+                    <p><strong>Descrição:</strong> Apoiar as atividades pedagógicas e de rotina, sob supervisão da
+                        equipe.</p>
+                </div>
 
+                <div class="vaga">
+                    <h3>Serviços Gerais</h3>
+                    <p><strong>Requisitos:</strong> Ensino fundamental, organização e responsabilidade.</p>
+                    <p><strong>Descrição:</strong> Limpeza e conservação dos ambientes escolares.</p>
+                </div>
+            </section>
 
-			<!-- Footer simplificado -->
-				<div id="footer">
-    <div class="container">
-        <ul class="icons">
-				<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-				<li><a href="https://www.instagram.com/escolapequenosgenius/" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-				<li><a href="https://wa.me/5511989092211" class="icon brands fa-whatsapp"><span class="label">WhatsApp</span></a></li>                    
-        </ul>
-        <div class="copyright">
-            <ul class="menu">
-                <li>&copy; 2025 Escola Infantil Pequenos Genius. Todos os direitos reservados.</li>
-                <li>Desenvolvido por <a href="#">Leandro D. Mauricio</a></li>
-            </ul>
+            <section class="formulario">
+                <h2 id="form-entreEmContato">Entre em contato</h2>
+                <form id="form-contato" method="POST" action="https://formspree.io/f/xyzjrpok">
+                    <input type="text" name="nome" placeholder="Nome completo" required>
+                    <input type="email" name="email" placeholder="E-mail" required>
+                    <input type="tel" name="whatsapp" id="whatsapp" placeholder="(99) 99999-9999" required>
+                    <script src="https://unpkg.com/vanilla-masker/build/vanilla-masker.min.js"></script>
+                    <script>
+                        VMasker(document.querySelector("#whatsapp")).maskPattern("(99) 99999-9999");
+                        document.getElementById("form-contato").addEventListener("submit", async function (event) {
+                            event.preventDefault(); // Impede envio automático
+
+                            const form = event.target;
+
+                            const formData = new FormData(form);
+
+                            try {
+                                await fetch(form.action, {
+                                    method: form.method,
+                                    body: formData,
+                                    headers: {
+                                        'Accept': 'application/json'
+                                    }
+                                });
+
+                                if (confirm("Recebemos a sua mensagem! Nossa equipe irá analisá-la com carinho. Muito obrigado por seu interesse em fazer parte da Pequenos Genius.")) {
+                                    window.location.href = "../index.html"; // redireciona para página inicial
+                                }
+
+                            } catch (error) {
+                                alert("Ocorreu um erro. Por favor, tente novamente.");
+                                console.error(error);
+                            }
+                        });             
+                    </script>
+                    <select name="vaga" required>
+                        <option value="">Selecione a vaga de interesse</option>
+                        <option>Professora de Educação Infantil</option>
+                        <option>Auxiliar de Sala</option>
+                        <option>Estagiário(a)</option>
+                        <option>Serviços Gerais</option>
+                    </select>
+                    <textarea name="mensagem" rows="4" placeholder="Fale sobre sua experiência e motivação"></textarea>
+                    <button type="submit">Enviar</button>
+                </form>
+            </section>
         </div>
+
     </div>
-</div>
 
-		</div>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.dropotron.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+    <!-- Rodape     -->
+    <footer id="footer" style="background: #b6d6fd6d; padding: 2em 1em; margin-top: 2em;">
+        <div class="footer-container" style="
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 2em;
+      max-width: 1200px;
+      margin: auto;
+  ">
 
-    <a href="https://wa.me/5511989092211?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20a%20Escola%20Pequenos%20Genius." class="whatsapp-fixo" target="_blank" title="Fale conosco no WhatsApp">
+            <!-- LINKS INSTITUCIONAIS -->
+            <div style="flex: 1 1 300px; min-width: 250px;">
+                <h4>Institucional</h4>
+                <ul style="list-style: none; padding: 0; margin: 0;">
+                    <li><a href="Links_Institucionais/queSomos.html">Quem Somos</a></li>
+                    <li><a href="Links_Institucionais/politicaPrivacidade.html">Política de Privacidade</a></li>
+                    <li><a href="Links_Institucionais/termosUso.html">Termos de Uso</a></li>
+                    <li><a href="contato-localizacao.html">Fale Conosco</a></li>
+                </ul>
+            </div>
+
+            <!-- REDES SOCIAIS -->
+            <div style="flex: 1 1 300px; min-width: 250px;">
+                <h4>Redes Sociais</h4>
+                <hr style="margin: 10px 0; border: none; border-top: 1px solid #ccc;">
+                <ul style="list-style: none; padding: 0; display: flex; gap: 15px; flex-wrap: wrap;">
+                    <li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+                    <li><a href="https://www.instagram.com/escolapequenosgenius/" class="icon brands fa-instagram"><span
+                                class="label">Instagram</span></a></li>
+                    <li><a href="https://wa.me/5511989092211" class="icon brands fa-whatsapp"><span
+                                class="label">WhatsApp</span></a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Direitos reservados -->
+    <div class="copyright" style="text-align: center  ; margin-top: 1em; color: #012863;">
+        <ul style="list-style: none; padding: 10px 0; margin: 0;">
+            <li>&copy; 2025 Escola Infantil Pequenos Genius. Todos os direitos reservados.
+                Desenvolvido por <a href="#">Leandro Diana. Mauricio</a></li>
+        </ul>
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.dropotron.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+
+    <a href="https://wa.me/5511989092211?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20a%20Escola%20Pequenos%20Genius."
+        class="whatsapp-fixo" target="_blank" title="Fale conosco no WhatsApp">
         <i class="fab fa-whatsapp"></i>
     </a>
 
@@ -296,15 +328,17 @@
             align-items: center;
             justify-content: center;
             font-size: 2.2em;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
             transition: background 0.2s;
             text-decoration: none;
         }
+
         .whatsapp-fixo:hover {
             background: #128c7e;
             color: #fff;
         }
     </style>
 
-	</body>
+</body>
+
 </html>
