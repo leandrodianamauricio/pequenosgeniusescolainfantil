@@ -5,9 +5,9 @@
     <title>Escola Infantil Pequenos Genius</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <link rel="stylesheet" href="assets/css/main.css" />
-    <link rel="stylesheet" href="assets/css/styles.css" />
-    <link rel="stylesheet" href="assets/css/styles_rodapé" />
+    <link rel="stylesheet" href="..\assets\css\main.css" />
+    <link rel="stylesheet" href="..\assets\css\styles.css" />
+    <link rel="stylesheet" href="..\assets\css\styles_rodapé" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <style>
         body {
@@ -122,8 +122,8 @@
 
                         // Adiciona a imagem no meio
                         const img = document.createElement("img");
-                        img.src = "images/logo_Garrafas.png";
-                        img.alt = "Logotipo da Escola Infantil Pequenos Genius";
+                        img.src = "../images/logo_Garrafas.png";
+                        img.alt = "../Logotipo da Escola Infantil Pequenos Genius";
                         container.appendChild(img);
 
                         // Adiciona "Pequenos Genius"
@@ -158,85 +158,44 @@
                     <!-- <li><a href="aluno.html">Àrea do Aluno</a></li>                     -->
                 </ul>
             </nav>
-        </div>
+        </div>      </header>
 
-        <!-- Banner -->
-        <section id="banner"> </section>
+      <!-- Main -->
+      <main class="wrapper style1">
+        <div class="container">
+          <div class="row gtr-200">
+            <!-- Sidebar -->
+            <aside class="col-4 col-12-narrower" id="sidebar">
+              <section>
+                <h3>Etapas Atendidas</h3>
+                <ul class="links">
+                  <li><strong>Berçário:</strong> vínculo afetivo, estímulos e segurança</li>
+                  <li><strong>Maternal:</strong> autonomia, linguagem e coordenação</li>
+                  <li><strong>Jardim:</strong> oralidade, pré-alfabetização e lógica</li>
+                  <li><strong>Hotelzinho:</strong> acolhimento com atividades recreativas</li>
+                </ul>
+              </section>
+              <section>
+                <h3>Parceria com as Famílias</h3>
+                <p>Valorizamos o diálogo constante, promovendo encontros, oficinas e momentos de integração.</p>
+              </section>
+            </aside>
 
-        <!-- Gigantic Heading -->
-        <section class="wrapper style1">
-            <div class="container">
-                <header class="major">
-                    <h2>Onde brincar é aprender 💡🎨</h2>
-                    <p>Na Pequenos Genius, cada descoberta é uma aventura! Oferecemos um ambiente seguro, lúdico e
-                        acolhedor para o desenvolvimento integral das crianças.</p>
-                </header>
-            </div>
-        </section>
-
-        <section class="container">
-            <h2 class="title">PROJETO PEDAGÓGICO</h2>
-            <p class="subtitle">O nosso diferencial é a excelência.</p>
-
-            <div class="card-container">
-
-                <!-- Card 1 -->
-                <div class="card">
-                    <img src="images/projetoPedagogico/berçario.png" alt="Berçario">
-                    <h3 class="card-title">Berçario</h3>
-                    <p class="card-text">
-                        Um espaço seguro, afetivo e preparado para acolher os primeiros passos do bebê. Com muito
-                        carinho, cuidamos do desenvolvimento e bem-estar dos pequenos desde os primeiros meses de vida.
-                        <a href="serviços/berçario.html">Saiba mais</a>
-                    </p>
-                </div>
-
-                <!-- Card 2 -->
-                <div class="card">
-                    <img src="images/projetoPedagogico/maternal.png" alt="Maternal">
-                    <h3 class="card-title">Maternal</h3>
-                    <p class="card-text">
-                        Um espaço acolhedor e seguro onde a criança desenvolve autonomia, socialização e habilidades com
-                        muito carinho e brincadeiras.
-                        <a href="serviços/maternal.html">Saiba mais</a>
-                    </p>
-                </div>
-
-                <!-- Card 3 -->
-                <div class="card">
-                    <img src="images/projetoPedagogico/jardim.png" alt="Jardim">
-                    <h3 class="card-title">Jardim</h3>
-                    <p class="card-text">
-                        As crianças ampliam seus conhecimentos com brincadeiras, interação e estímulos que desenvolvem a
-                        criatividade, linguagem e pensamento lógico.
-                        <a href="serviços/jardim.html">Saiba mais</a>
-                    </p>
-                </div>
-
-                <!-- Card 4 -->
-                <div class="card">
-                    <img src="images/projetoPedagogico/hotelzinho.png" alt="Hotelzinho">
-                    <h3 class="card-title">Hotelzinho</h3>
-                    <p class="card-text">
-                        Um ambiente seguro e divertido, pensado para o bem-estar das crianças fora do horário escolar,
-                        com afeto, cuidado e atividades recreativas.
-                        <a href="serviços/hotelzinho.html">Saiba mais</a>
-                    </p>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- CTA -->
-        <section id="cta" class="wrapper style3">
-            <div class="container">
+            <!-- Content -->
+            <div class="col-8 col-12-narrower imp-narrower" id="content">
+              <article>
                 <header>
-                    <h2>Venha nos conhecer!</h2>
-                    <a href="contato-localizacao.html" class="button">Fale conosco</a>
+                  <h2>Quem Somos</h2>
                 </header>
+                <img src="../images/banner_Proposta_Pedagogica.png" alt="Banner Pequenos Genius" class="image featured" />
+                <p>
+                  Nossa escola nasceu do sonho de uma pedagoga apaixonada por educação, mãe de três filhos, que decidiu construir um ambiente onde cada criança pudesse florescer. Com perseverança e dedicação, criou uma equipe comprometida e uma instituição que inspira, cuida e prepara nossas crianças para os desafios do mundo.
+                </p>
+              </article>
             </div>
-        </section>
-
+          </div>
+        </div>
+      </main>
 
         <!-- Rodape     -->
 <footer id="footer" style="background: #b6d6fd6d; padding: 2em 1em; margin-top: 2em;">
@@ -315,12 +274,12 @@
         </style>
 
         <!-- Scripts -->
-        <script src="assets/js/jquery.min.js"></script>
-        <script src="assets/js/jquery.dropotron.min.js"></script>
-        <script src="assets/js/browser.min.js"></script>
-        <script src="assets/js/breakpoints.min.js"></script>
-        <script src="assets/js/util.js"></script>
-        <script src="assets/js/main.js"></script>
+        <script src="../assets/js/jquery.min.js"></script>
+        <script src="../assets/js/jquery.dropotron.min.js"></script>
+        <script src="../assets/js/browser.min.js"></script>
+        <script src="../assets/js/breakpoints.min.js"></script>
+        <script src="../assets/js/util.js"></script>
+        <script src="../assets/js/main.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/js/all.min.js"></script>
 </body>
 
