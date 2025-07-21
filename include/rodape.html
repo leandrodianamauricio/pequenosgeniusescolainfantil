@@ -1,12 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
 
-<link rel="stylesheet" href="../assets/css/styles_rodapé" />
+<head>
+  <meta charset="UTF-8">
+  <title>Rodapé em HTML Puro</title>
+</head>
 
+<body>
 
-  <!-- Direitos autorais -->
-  <div style="text-align: center; margin-top: 2em; color: #012863;">
-    <ul style="list-style: none; padding: 0; margin: 0;">
-      <li>&copy; 2025 Escola Infantil Pequenos Genius. Todos os direitos reservados.</li>
-      <li>Desenvolvido por <a href="#">Leandro D. Mauricio</a></li>
+  <!-- Rodapé -->
+  <footer id="footer" style="background: #b6d6fd6d; padding: 0em 0em; margin-top: 0em;">
+    <div class="footer-container" style="
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 0em;
+      max-width: 1800px;
+      margin: auto;
+  ">
+
+      <!-- LINKS INSTITUCIONAIS -->
+      <div style="flex: 1 1 10px; min-width: 250px;">
+        <h4>Institucional</h4>
+        <ul style="list-style: none; padding: 0; margin: 0;">
+          <li><a href="Links_Institucionais/queSomos.html">Quem Somos</a></li>
+          <li><a href="Links_Institucionais/politicaPrivacidade.html">Política de Privacidade</a></li>
+          <li><a href="Links_Institucionais/termosUso.html">Termos de Uso</a></li>
+          <li><a href="contato-localizacao.html">Fale Conosco</a></li>
+        </ul>
+      </div>
+
+      <!-- REDES SOCIAIS -->
+      <div style="flex: 1 1 10px; min-width: 250px;">
+        <h4>Redes Sociais</h4>
+        <hr style="margin: 10px 0; border: none; border-top: 1px solid #ccc;">
+        <ul style="list-style: none; padding: 0; display: flex; gap: 15px; flex-wrap: wrap;">
+          <li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+          <li><a href="https://www.instagram.com/escolapequenosgenius/" class="icon brands fa-instagram"><span
+                class="label">Instagram</span></a></li>
+          <li><a href="https://wa.me/5511989092211" class="icon brands fa-whatsapp"><span
+                class="label">WhatsApp</span></a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Direitos reservados -->
+  <div class="copyright" style="text-align: center  ; margin-top: 0em; color: #012863;">
+    <ul style="list-style: none; padding: 0px 0; margin: 0;">
+      <li><b>&copy; 2025 Escola Infantil Pequenos Genius.</b> Todos os direitos reservados.
+        <b>Desenvolvido por <a href="#">Leandro D. Mauricio</a></b>
+      </li>
     </ul>
   </div>
 
+  <!-- Espaçamento de blocos -->
+  <div style="height: 30px;"></div>
+
+</body>
+
+</html>
