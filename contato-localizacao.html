@@ -1,58 +1,161 @@
 <!DOCTYPE HTML>
 <html>
-	<head>
-		<title>Contatos e Localização - Escola Infantil Pequenos Genius</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-	</head>
+<head>
+    <title>Escola Infantil Pequenos Genius</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <style>
-        #logo em { color: #2d2d2d; }
+        body {
+            background: #b6d6fd6d;
+        }
+
+        #header {
+            background: linear-gradient(90deg, #fffefc 0%, #fffffe 100%);
+        }
+
+        #logo em {
+            color: #2d2d2d;
+        }
+
+        .box.highlight {
+            background: #fff3e0;
+            border-radius: 12px;
+        }
+
+        .box.post {
+            background: #4169e124;
+            border-radius: 12px;
+        }
+
+        /* caixa venha nos conhecer         */
+        #cta {
+            background: #4169E1;
+        }
+
+        .button {
+            background: #ff9800;
+            color: #fff;
+            border-radius: 20px;
+        }
+
+        .button.alt {
+            background: #fff;
+            color: #ff9800;
+            border: 2px solid #ff9800;
+        }
     </style>
-	<body class="is-preload">
-		<div id="page-wrapper">
+</head>
+<body class="is-preload">
+    <div id="page-wrapper">
 
-			<!-- Header -->
-				<div id="header">
-					<!-- Logo -->
-						<h1 id="logo">
-    						<a href="index.html">
-     					   	<span style="color: orange;"> Escola Infantil 
-        					  	<img src="images/logo_Garrafas.png" alt="Logotipo da Escola Infantil Pequenos Genius" style="vertical-align: middle; max-height: 40px; margin-right: 1px;" />
-								<em> Pequenos Genius</em></span>
-   						 	</a>
-						</h1>
+        <!-- Header -->
+        <div id="header">
+            <h1 id="logo">
+                <a href="index.html">
+                    <span class="colorido" id="logoTexto"></span>
 
-					<!-- Nav -->
-						<nav id="nav">
-							<ul>
-								<li><a href="index.html">Página Inicial</a></li>
-								<li>
-									<a href="#">Serviços</a>
-									<ul>
-										<li><a href="serviços/berçario.html">Berçário</a></li>
-										<li><a href="serviços/maternal.html">Maternal</a></li>
-										<li><a href="serviços/jardim.html">Jardim</a></li>
-										<li><a href="serviços/hotelzinho.html">Hotelzinho</a></li>
-									</ul>
-								</li>
-								<li><a href="proposta-pedagogica.html">Proposta Pedagógica</a></li>
-								<li><a href="infraestrutura.html">Infraestrutura</a></li>
-								<li class="current"><a href="contato-localizacao.html">Contatos e Localização</a></li>
-								<li><a href="vagas.html">Vagas</a></li>
-								<li><a href="#">Fotos</a>
-									<ul>
-										<li><a href="#">Foto1</a></li>
-										<li><a href="#">Foto2</a></li>
-										<li><a href="#">Foto3</a></li>
-										<li><a href="#">Foto4</a></li>
-									</ul>
-								</li>
-                            		<!-- <li><a href="aluno.html">Àrea do Aluno</a></li>                    	 -->
-							</ul>
-						</nav>
+                    <style>
+                        .colorido span:nth-child(3n+1) {
+                            color: #FB94F4;
+                        }
 
-				</div>
+                        .colorido span:nth-child(3n+2) {
+                            color: #0BBBE7;
+                        }
+
+                        .colorido span:nth-child(3n+3) {
+                            color: #FED702;
+                        }
+
+                        .colorido {
+                            font-size: 3rem;
+                            font-family: sans-serif;
+                            font-weight: bold;
+                            display: inline-flex;
+                            align-items: center;
+                            flex-wrap: wrap;
+                            gap: 1px;
+                        }
+
+                        .colorido img {
+                            vertical-align: middle;
+                            max-height: 70px;
+                            margin: 0 6px;
+                            transition: all 0.3s ease;
+                        }
+
+                        /* 📱 Ajustes para telas menores (mobile) */
+                        @media (max-width: 768px) {
+                            .colorido {
+                                font-size: 1rem;
+                            }
+
+                            .colorido img {
+                                max-height: 25px;
+                                margin: 0 4px;
+                            }
+                        }
+                    </style>
+
+                    <script>
+                        const textoAntes = "Escola Infantil ";
+                        const textoDepois = "Pequenos Genius";
+                        const container = document.getElementById("logoTexto");
+
+                        // Função para criar spans com letras (incluindo espaços)
+                        function adicionarTextoColorido(texto) {
+                            texto.split("").forEach(letra => {
+                                const span = document.createElement("span");
+                                span.textContent = letra === " " ? "\u00A0" : letra; // espaço não-quebrável
+                                container.appendChild(span);
+                            });
+                        }
+
+                        // Adiciona "Escola Infantil "
+                        adicionarTextoColorido(textoAntes);
+
+                        // Adiciona a imagem no meio
+                        const img = document.createElement("img");
+                        img.src = "images/logo_Garrafas.png";
+                        img.alt = "Logotipo da Escola Infantil Pequenos Genius";
+                        container.appendChild(img);
+
+                        // Adiciona "Pequenos Genius"
+                        adicionarTextoColorido(textoDepois);
+                    </script>
+                </a>
+            </h1>
+            <nav id="nav">
+                <ul>
+                    <li><a href="index.html">Página Inicial</a></li>
+                    <li>
+                        <a href="#">Serviços</a>
+                        <ul>
+                            <li><a href="serviços/berçario.html">Berçário</a></li>
+                            <li><a href="serviços/maternal.html">Maternal</a></li>
+                            <li><a href="serviços/jardim.html">Jardim</a></li>
+                            <li><a href="serviços/hotelzinho.html">Hotelzinho</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="proposta-pedagogica.html">Proposta Pedagógica</a></li>
+                    <li><a href="infraestrutura.html">Infraestrutura</a></li>
+                    <li class="current"><a href="contato-localizacao.html">Contatos e Localização</a></li>
+                    <li><a href="vagas.html">Vagas</a></li>
+                    <li><a href="#">Fotos</a>
+                        <ul>
+                            <li><a href="#">Foto1</a></li>
+                            <li><a href="#">Foto2</a></li>
+                            <li><a href="#">Foto3</a></li>
+                            <li><a href="#">Foto4</a></li>
+                        </ul>
+                    </li>
+                    <!-- <li><a href="aluno.html">Àrea do Aluno</a></li>                     -->
+                </ul>
+            </nav>
+        </div>
 
 			<!-- Main -->
 				<section class="wrapper style1">
@@ -193,5 +296,5 @@
         }
     </style>
 
-	</body>
+</body>
 </html>

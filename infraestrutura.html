@@ -3,106 +3,300 @@
 	Escola Infantil Pequenos Genius
 -->
 <html>
-	<head>
-		<title>Infraestrutura - Escola Infantil Pequenos Genius</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-	</head>
+<head>
+    <title>Escola Infantil Pequenos Genius</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <style>
-        #logo em { color: #2d2d2d; }
-    </style>		
-	<body class="is-preload">
-		<div id="page-wrapper">
+        body {
+            background: #b6d6fd6d;
+        }
 
-			<!-- Header -->
-				<div id="header">
+        #header {
+            background: linear-gradient(90deg, #fffefc 0%, #fffffe 100%);
+        }
 
-					<!-- Logo -->
-						<h1 id="logo">
-    						<a href="index.html">
-     					   	<span style="color: orange;"> Escola Infantil 
-        					  	<img src="images/logo_Garrafas.png" alt="Logotipo da Escola Infantil Pequenos Genius" style="vertical-align: middle; max-height: 40px; margin-right: 1px;" />
-								<em> Pequenos Genius</em></span>
-   						 	</a>
-						</h1>
+        #logo em {
+            color: #2d2d2d;
+        }
 
-					<!-- Nav -->
-						<nav id="nav">
-							<ul>
-								<li><a href="index.html">Página Inicial</a></li>
-								<li>
-									<a href="#">Serviços</a>
-									<ul>
-										<li><a href="serviços/berçario.html">Berçário</a></li>
-										<li><a href="serviços/maternal.html">Maternal</a></li>
-										<li><a href="serviços/jardim.html">Jardim</a></li>
-										<li><a href="serviços/hotelzinho.html">Hotelzinho</a></li>
-									</ul>
-								</li>
-								<li><a href="proposta-pedagogica.html">Proposta Pedagógica</a></li>
-								<li class="current"><a href="infraestrutura.html">Infraestrutura</a></li>
-								<li><a href="contato-localizacao.html">Contatos e Localização</a></li>
-								<li><a href="vagas.html">Vagas</a></li>
-								<li><a href="#">Fotos</a>
-									<ul>
-										<li><a href="#">Foto1</a></li>
-										<li><a href="#">Foto2</a></li>
-										<li><a href="#">Foto3</a></li>
-										<li><a href="#">Foto4</a></li>
-									</ul>
-								</li>
-								<!-- <li><a href="aluno.html">Àrea do Aluno</a></li> -->
-							</ul>
-						</nav>
-					</div>
+        .box.highlight {
+            background: #fff3e0;
+            border-radius: 12px;
+        }
 
+        .box.post {
+            background: #4169e124;
+            border-radius: 12px;
+        }
 
-			<!-- Main -->
-				<section class="wrapper style1">
+        /* caixa venha nos conhecer         */
+        #cta {
+            background: #4169E1;
+        }
+
+        .button {
+            background: #ff9800;
+            color: #fff;
+            border-radius: 20px;
+        }
+
+        .button.alt {
+            background: #fff;
+            color: #ff9800;
+            border: 2px solid #ff9800;
+        }
+    </style>
+</head>
+    <body class="is-preload">
+    <div id="page-wrapper">
+
+        <!-- Header -->
+        <div id="header">
+            <h1 id="logo">
+                <a href="index.html">
+                    <span class="colorido" id="logoTexto"></span>
+
+                    <style>
+                        .colorido span:nth-child(3n+1) {
+                            color: #FB94F4;
+                        }
+
+                        .colorido span:nth-child(3n+2) {
+                            color: #0BBBE7;
+                        }
+
+                        .colorido span:nth-child(3n+3) {
+                            color: #FED702;
+                        }
+
+                        .colorido {
+                            font-size: 3rem;
+                            font-family: sans-serif;
+                            font-weight: bold;
+                            display: inline-flex;
+                            align-items: center;
+                            flex-wrap: wrap;
+                            gap: 1px;
+                        }
+
+                        .colorido img {
+                            vertical-align: middle;
+                            max-height: 70px;
+                            margin: 0 6px;
+                            transition: all 0.3s ease;
+                        }
+
+                        /* 📱 Ajustes para telas menores (mobile) */
+                        @media (max-width: 768px) {
+                            .colorido {
+                                font-size: 1rem;
+                            }
+
+                            .colorido img {
+                                max-height: 25px;
+                                margin: 0 4px;
+                            }
+                        }
+                    </style>
+
+                    <script>
+                        const textoAntes = "Escola Infantil ";
+                        const textoDepois = "Pequenos Genius";
+                        const container = document.getElementById("logoTexto");
+
+                        // Função para criar spans com letras (incluindo espaços)
+                        function adicionarTextoColorido(texto) {
+                            texto.split("").forEach(letra => {
+                                const span = document.createElement("span");
+                                span.textContent = letra === " " ? "\u00A0" : letra; // espaço não-quebrável
+                                container.appendChild(span);
+                            });
+                        }
+
+                        // Adiciona "Escola Infantil "
+                        adicionarTextoColorido(textoAntes);
+
+                        // Adiciona a imagem no meio
+                        const img = document.createElement("img");
+                        img.src = "images/logo_Garrafas.png";
+                        img.alt = "Logotipo da Escola Infantil Pequenos Genius";
+                        container.appendChild(img);
+
+                        // Adiciona "Pequenos Genius"
+                        adicionarTextoColorido(textoDepois);
+                    </script>
+                </a>
+            </h1>
+            <nav id="nav">
+                <ul>
+                    <li><a href="index.html">Página Inicial</a></li>
+                    <li>
+                        <a href="#">Serviços</a>
+                        <ul>
+                            <li><a href="serviços/berçario.html">Berçário</a></li>
+                            <li><a href="serviços/maternal.html">Maternal</a></li>
+                            <li><a href="serviços/jardim.html">Jardim</a></li>
+                            <li><a href="serviços/hotelzinho.html">Hotelzinho</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="proposta-pedagogica.html">Proposta Pedagógica</a></li>
+                    <li class="current"><a href="infraestrutura.html">Infraestrutura</a></li>
+                    <li><a href="contato-localizacao.html">Contatos e Localização</a></li>
+                    <li><a href="vagas.html">Vagas</a></li>
+                    <li><a href="#">Fotos</a>
+                        <ul>
+                            <li><a href="#">Foto1</a></li>
+                            <li><a href="#">Foto2</a></li>
+                            <li><a href="#">Foto3</a></li>
+                            <li><a href="#">Foto4</a></li>
+                        </ul>
+                    </li>
+                    <!-- <li><a href="aluno.html">Àrea do Aluno</a></li>                     -->
+                </ul>
+            </nav>
+        </div>
+
+<!-- Main -->
+<section class="wrapper style1">
     <div class="container">
         <div class="row gtr-200">
             <div class="col-12">
                 <div id="content">
                     <article>
-                        <header>
+                        <header class="box highlight">
                             <h2>Infraestrutura</h2>
                             <p>Conheça nossos ambientes: planejados para acolher, educar e garantir a segurança das crianças.</p>
                         </header>
-                        <h3>Fachada e Entrada</h3>
-                        <p>Fachada moderna e entrada segura, com acesso controlado para maior tranquilidade das famílias.</p>
-                        <span class="image fit"><img src="images/infraestrutura/01.01 escola.png" alt="Fachada da escola" /></span>
-                        <span class="image fit"><img src="images/infraestrutura/02.01 calçada.png" alt="Calçada de acesso" /></span>
-                        <span class="image fit"><img src="images/infraestrutura/02.02 calçada.png" alt="Calçada de acesso" /></span>						
-                        <span class="image fit"><img src="images/infraestrutura/04.01 hall_Entrada.png" alt="Hall de entrada" /></span>
-                        <h3>Salas de Aula</h3>
-                        <p>Salas amplas, bem iluminadas e equipadas para cada faixa etária, proporcionando conforto e estímulo ao aprendizado.</p>
-                        <span class="image fit"><img src="images/infraestrutura/05.01 maternal_Sala.png" alt="Sala Maternal" /></span>
-                        <span class="image fit"><img src="images/infraestrutura/05.02 jardim_Sala.png" alt="Sala Jardim" /></span>
-                        <h3>Berçário</h3>
-                        <p>Ambiente acolhedor, com espaço para descanso, banho e atividades, garantindo o bem-estar dos bebês.</p>
-                        <span class="image fit"><img src="images/infraestrutura/07.01 berçario_Sala .png" alt="Sala do Berçário" /></span>
-                        <span class="image fit"><img src="images/infraestrutura/07.02 berçario_Sala.png" alt="Sala do Berçário" /></span>
-                        <span class="image fit"><img src="images/infraestrutura/07.03 berçario_Banho.png" alt="Banheiro do Berçário" /></span>
-                        <h3>Corredores e Escadas</h3>
-                        <p>Corredores largos e escadas seguras, facilitando a circulação e o acesso entre os ambientes.</p>
-                        <span class="image fit"><img src="images/infraestrutura/08.01 corredor.png" alt="Corredor" /></span>
-                        <span class="image fit"><img src="images/infraestrutura/03.01 escada.png" alt="Escada" /></span>
-                        <span class="image fit"><img src="images/infraestrutura/03.02 escada.png" alt="Escada" /></span>
-                        <span class="image fit"><img src="images/infraestrutura/03.03 escada.png" alt="Escada" /></span>
-                        <h3>Espaço do Sono</h3>
-                        <p>Ambiente tranquilo e confortável para o descanso das crianças, com supervisão constante.</p>
-                        <span class="image fit"><img src="images/infraestrutura/09.01 sono_Sala.png" alt="Sala de sono" /></span>
-                        <h3>Brinquedoteca e Sala de TV</h3>
-                        <p>Espaço lúdico com brinquedos educativos, jogos e TV, estimulando a criatividade e a socialização.</p>
-                        <span class="image fit"><img src="images/infraestrutura/10.01 brinquedoteca_TV_Sala.png" alt="Brinquedoteca e Sala de TV" /></span>
-                        <h3>Refeitório</h3>
-                        <p>Ambiente limpo e acolhedor para as refeições, promovendo bons hábitos alimentares.</p>
-                        <span class="image fit"><img src="images/infraestrutura/11.01 refeitorio.png" alt="Refeitório" /></span>
-                        <h3>Parquinho e Quadra</h3>
-                        <p>Área externa com parquinho e quadra, onde as crianças brincam, praticam esportes e desenvolvem habilidades motoras.</p>
-                        <span class="image fit"><img src="images/infraestrutura/12.01 parquinho.png" alt="Parquinho" /></span>
-                        <span class="image fit"><img src="images/infraestrutura/13.01 quadra.png" alt="Quadra" /></span>
+
+                        <div class="box post">
+                            <h3><i class="fas fa-building"></i> Fachada e Entrada</h3>
+                            <p>Fachada moderna e entrada segura, com acesso controlado para maior tranquilidade das famílias.</p>
+                            <div class="image-grid">
+                                <div class="image-item">
+                                    <img src="images/infraestrutura/01.01 escola.png" alt="Fachada da escola" />
+                                    <div class="image-caption">Fachada da escola</div>
+                                </div>
+                                <div class="image-item">
+                                    <img src="images/infraestrutura/02.01 calçada.png" alt="Calçada de acesso" />
+                                    <div class="image-caption">Calçada de acesso</div>
+                                </div>
+                                <div class="image-item">
+                                    <img src="images/infraestrutura/02.02 calçada.png" alt="Calçada de acesso" />
+                                    <div class="image-caption">Área externa</div>
+                                </div>
+                                <div class="image-item">
+                                    <img src="images/infraestrutura/04.01 hall_Entrada.png" alt="Hall de entrada" />
+                                    <div class="image-caption">Hall de entrada</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box post">
+                            <h3><i class="fas fa-chalkboard-teacher"></i> Salas de Aula</h3>
+                            <p>Salas amplas, bem iluminadas e equipadas para cada faixa etária, proporcionando conforto e estímulo ao aprendizado.</p>
+                            <div class="image-grid">
+                                <div class="image-item">
+                                    <img src="images/infraestrutura/05.01 maternal_Sala.png" alt="Sala Maternal" />
+                                    <div class="image-caption">Sala do Maternal</div>
+                                </div>
+                                <div class="image-item">
+                                    <img src="images/infraestrutura/05.02 jardim_Sala.png" alt="Sala Jardim" />
+                                    <div class="image-caption">Sala do Jardim</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="box post">
+                            <h3><i class="fas fa-baby"></i> Berçário</h3>
+                            <p>Ambiente acolhedor, com espaço para descanso, banho e atividades, garantindo o bem-estar dos bebês.</p>
+                            <div class="image-grid">
+                                <div class="image-item">
+                                    <img src="images/infraestrutura/07.01 berçario_Sala .png" alt="Sala do Berçário" />
+                                    <div class="image-caption">Sala do Berçário</div>
+                                </div>
+                                <div class="image-item">
+                                    <img src="images/infraestrutura/07.02 berçario_Sala.png" alt="Sala do Berçário" />
+                                    <div class="image-caption">Área de atividades</div>
+                                </div>
+                                <div class="image-item">
+                                    <img src="images/infraestrutura/07.03 berçario_Banho.png" alt="Banheiro do Berçário" />
+                                    <div class="image-caption">Banheiro do Berçário</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box post">
+                            <h3><i class="fas fa-door-open"></i> Corredores e Escadas</h3>
+                            <p>Corredores largos e escadas seguras, facilitando a circulação e o acesso entre os ambientes.</p>
+                            <div class="image-grid">
+                                <div class="image-item">
+                                    <img src="images/infraestrutura/08.01 corredor.png" alt="Corredor" />
+                                    <div class="image-caption">Corredor principal</div>
+                                </div>
+                                <div class="image-item">
+                                    <img src="images/infraestrutura/03.01 escada.png" alt="Escada" />
+                                    <div class="image-caption">Escada de acesso</div>
+                                </div>
+                                <div class="image-item">
+                                    <img src="images/infraestrutura/03.02 escada.png" alt="Escada" />
+                                    <div class="image-caption">Escada interna</div>
+                                </div>
+                                <div class="image-item">
+                                    <img src="images/infraestrutura/03.03 escada.png" alt="Escada" />
+                                    <div class="image-caption">Vista da escada</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="box post">
+                            <h3><i class="fas fa-bed"></i> Espaço do Sono</h3>
+                            <p>Ambiente tranquilo e confortável para o descanso das crianças, com supervisão constante.</p>
+                            <div class="image-grid">
+                                <div class="image-item">
+                                    <img src="images/infraestrutura/09.01 sono_Sala.png" alt="Sala de sono" />
+                                    <div class="image-caption">Sala de descanso</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="box post">
+                            <h3><i class="fas fa-puzzle-piece"></i> Brinquedoteca e Sala de TV</h3>
+                            <p>Espaço lúdico com brinquedos educativos, jogos e TV, estimulando a criatividade e a socialização.</p>
+                            <div class="image-grid">
+                                <div class="image-item">
+                                    <img src="images/infraestrutura/10.01 brinquedoteca_TV_Sala.png" alt="Brinquedoteca e Sala de TV" />
+                                    <div class="image-caption">Espaço recreativo</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="box post">
+                            <h3><i class="fas fa-utensils"></i> Refeitório</h3>
+                            <p>Ambiente limpo e acolhedor para as refeições, promovendo bons hábitos alimentares.</p>
+                            <div class="image-grid">
+                                <div class="image-item">
+                                    <img src="images/infraestrutura/11.01 refeitorio.png" alt="Refeitório" />
+                                    <div class="image-caption">Área de alimentação</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="box post">
+                            <h3><i class="fas fa-basketball-ball"></i> Parquinho e Quadra</h3>
+                            <p>Área externa com parquinho e quadra, onde as crianças brincam, praticam esportes e desenvolvem habilidades motoras.</p>
+                            <div class="image-grid">
+                                <div class="image-item">
+                                    <img src="images/infraestrutura/12.01 parquinho.png" alt="Parquinho" />
+                                    <div class="image-caption">Parquinho infantil</div>
+                                </div>
+                                <div class="image-item">
+                                    <img src="images/infraestrutura/13.01 quadra.png" alt="Quadra" />
+                                    <div class="image-caption">Quadra esportiva</div>
+                                </div>
+                            </div>
+                        </div>
                     </article>
                 </div>
             </div>
